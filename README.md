@@ -58,7 +58,8 @@ uploadVideo(session_id, file, title, tags, schedule_time, verbose=True)
 - `title`: The title of your publication (without hashtags).<br>
 - `tags`: The list of hashtags you want to add to your post (without `#` symbol). May be empty list `[]`.<br>
 - `schedule_time`: The timestamp (in seconds) at which you want to schedule your video.<br>
-**Note that you cannot schedule a video more than 10 days in advance.**
+**Note that you cannot schedule a video more than 10 days in advance.**<br>
+**Note that your TikTok *sessionid* cookie needs to be updated every 2 months.**
 
 ### With the command line
 ```
