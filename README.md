@@ -28,8 +28,8 @@ You will also need your TikTok ***sessionid* cookie**. To get it log in to your 
 ### Installation
 Make sure you've already git installed. Then you can run the following commands to get the scripts on your computer:
    ```sh
-   git clone https://github.com/MiniGlome/Tiktok_uploader.git
-   cd Tiktok_uploader
+   git clone https://github.com/MiniGlome/Tiktok-uploader.git
+   cd Tiktok-uploader
    ```
 The script only requires the `requests` module, you can install it with this command:
 ```sh
