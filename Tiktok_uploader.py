@@ -15,7 +15,7 @@ def getSignatureKey(key, dateStamp, regionName, serviceName):
 
 def AWSsignature(access_key, secret_key, request_parameters, headers, method="GET", payload='', region="us-east-1", service="vod"):
 	# https://docs.aws.amazon.com/fr_fr/general/latest/gr/sigv4-signed-request-examples.html
-	canonical_uri = '/' 
+	canonical_uri = '/'
 	canonical_querystring = request_parameters
 	canonical_headers = '\n'.join([f"{h[0]}:{h[1]}" for h in headers.items()]) + '\n'
 	signed_headers = ';'.join(headers.keys())
@@ -48,7 +48,7 @@ def printError(url, r):
 
 def assertSuccess(url, r):
 	if r.status_code != 200:
-		printError(url, r)	
+		printError(url, r)
 	return r.status_code == 200
 
 def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
@@ -197,7 +197,7 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
 	r = session.head(url, headers=headers)
 	if not assertSuccess(url, r):
 		return False
-	x_csrf_token = r.headers["X-Ware-Csrf-Token"].split(',')[1]
+	#x_csrf_token = r.headers["X-Ware-Csrf-Token"].split(',')[1]
 
 	params = {
 		"video_id":video_id,
@@ -213,7 +213,7 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
 	}
 	if schedule_time:
 		params["schedule_time"] = schedule_time
-	headers = {"X-Secsdk-Csrf-Token": x_csrf_token}
+	#headers = {"X-Secsdk-Csrf-Token": x_csrf_token}
 	r = session.post(url, params=params, headers=headers)
 	if not assertSuccess(url, r):
 		return False
