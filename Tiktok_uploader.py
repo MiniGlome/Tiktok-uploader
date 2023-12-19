@@ -71,7 +71,6 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
 	r = session.get(url)
 	if not assertSuccess(url, r):
 		return False
-	user_id = r.json()["data"]["user_id_str"]
 
 	url = "https://www.tiktok.com/api/v1/video/upload/auth/"
 	r = session.get(url)
